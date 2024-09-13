@@ -1,0 +1,214 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Aplica rolagem suave para âncoras */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #ff9900;
+}
+
+/* Banner */
+.banner {
+    background: url('back2.jpg') center center/cover no-repeat;
+    color: white;
+    height: 700px; /* Altura padrão do banner */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    background-size: cover; /* Faz com que a imagem cubra o banner */
+    background-position: center center; /* Centraliza a imagem de fundo */
+}
+
+.banner-content {
+    max-width: 40%; /* Limita o texto a 50% da largura do banner em telas maiores */
+}
+
+.banner-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 18px;
+    font-weight: 300;
+	padding: 10px
+}
+
+.banner-content h1, .banner-content p {
+    color: #fff; 
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao texto */
+}
+.banner a{
+	text-decoration: none;
+	font-size: 18px;
+	padding: 5px;
+	background: #fff;
+	border-radius: 30px;
+	margin-top: 0px;
+	color: #FFFOO1;
+}
+
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .banner {
+        height: 100vh; /* Define a altura do banner como 100% da altura da tela */
+        padding: 30px 10px; /* Ajusta o padding para telas menores */
+        background-size: cover; /* Garante que a imagem cubra a área disponível */
+        background-position: center center; /* Garante que a imagem fique centralizada */
+        width: 100vw; /* Garante que o banner ocupe toda a largura da tela */
+    }
+
+    .banner-content {
+        max-width: 100%; /* Ocupa a largura total da tela */
+        display: flex;
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza o conteúdo */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .banner-content h1 {
+        font-size: 24px; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+
+    .banner-content p {
+        font-size: 17px; /* Reduz o tamanho da fonte do parágrafo */
+    }
+}
+
+/* Produtos */
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produto h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.produto p {
+    font-size: 16px;
+    color: #ff9900;
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav ul li a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .show {
+        display: flex;
+    }
+}
